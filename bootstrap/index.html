@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/vue/dist/vue.global.js"></script>
+    <script href="node_modules/fontawesome/index.js"></script>
 </head>
+
 <body>
-    
+    <div id="app" class="container py-3">
+        <button class="btn btn-dark">hi there</button>
+
+        <div class="body-container  d-flex justify-content-center">
+            <div class="card mx-1 shadow asep">
+                <div class="card-header d-flex justify-content-center">
+                    <div class="card-title">
+                        <h3>Burung Hantu</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <img :src="owl" class="rounded-2" alt="">
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group ">
+                        <button class="btn btn-success"><i class=""></i> Like</button>
+                        <button class="btn btn-danger">Dislike</button>
+                    </div>
+                    <button class="btn btn-outline-dark float-end">Share</button>
+                </div>
+            </div>
+        </div>
+        <p>{{burger}}</p>
+    </div>
 </body>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="main.js"></script>
+<script>
+    const mountedApp = app.mount('#app')
+  </script>
 </html>

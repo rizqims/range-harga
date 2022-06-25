@@ -13,29 +13,19 @@
 </head>
 
 <body>
-    <div id="app" class="container py-3">
-        <button class="btn btn-dark">hi there</button>
-
-        <div class="body-container  d-flex justify-content-center">
-            <div class="card mx-1 shadow asep">
-                <div class="card-header d-flex justify-content-center">
-                    <div class="card-title">
-                        <h3>Burung Hantu</h3>
-                    </div>
+    <div id="app" class="container d-flex justify-content-center py-3">
+        <div v-for="item in items" class="card w-25 shadow mx-2">
+            <div class="card-body">
+                <div :style="gradients(item.primaryC, item.secondaryC)" class="text-center border py-3 mb-5 border-2 rounded-1 ">
+                    <span class="hero-title fs-1 fw-bold">{{item.kelas}}</span>
                 </div>
-                <div class="card-body">
-                    <img :src="owl" class="rounded-2" alt="">
-                </div>
-                <div class="card-footer">
-                    <div class="btn-group ">
-                        <button class="btn btn-success"><i class=""></i> Like</button>
-                        <button class="btn btn-danger">Dislike</button>
-                    </div>
-                    <button class="btn btn-outline-dark float-end">Share</button>
-                </div>
+                <span>Benefits:</span>
+                <ul>
+                    <li v-for="benefit in item.benefits">{{benefit}}</li>
+                </ul>
+                <button class="btn btn-primary w-100">Choose Me!</button>
             </div>
         </div>
-        <p>{{burger}}</p>
     </div>
 </body>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>

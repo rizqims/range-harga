@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="../assets/styles/styleBootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/vue/dist/vue.global.js"></script>
+    <script href="../node_modules/fontawesome/index.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container d-flex justify-content-center py-3">
+        <div v-for="item in items" class="card w-25 shadow mx-2">
+            <div class="card-body" :style="gradients(item.primaryC, item.secondaryC)">
+                <div class="text-center border py-4 mb-5 border-2 rounded-1 bg-white ">
+                    <span class="hero-title fs-1 fw-bold">{{item.kelas}}</span>
+                    <div class="harga bg-white w-100">
+                        <span class="h3">Rp {{item.harga}}</span>
+                    </div>
+                </div>
+                <div class="body-wrap bg-white p-2 rounded-1 mb-3">
+                    <span>Benefits:</span>
+                    <ul>
+                        <li v-for="benefit in item.benefits">{{benefit}}</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary w-100">ORDER</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="mainBootstrap.js"></script>
+<script>
+    const mountedApp = app.mount('#app')
+  </script>
+</html>
